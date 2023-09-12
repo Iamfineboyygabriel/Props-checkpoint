@@ -1,52 +1,31 @@
-import Messi from './../src/Images/Messi-picture.jpg'
-import Ronaldo from './../src/Images/ronaldo-picture.jpg'
-import Neymar from './../src/Images/Neymar-picture.jpg'
-import Victor from './../src/Images/Victor-osimen.jpg'
-import Mmbape from './../src/Images/Mmbape-picture.jpg'
+import React from 'react';
+import './App.css'
+import Card from 'react-bootstrap/Card';
 
+const Player = ({ name, team, nationality, jerseyNumber, age, imageUrl }) => {
+  return (
+    <Card style={{ width: '18rem' }} className='player-container'>
+      <Card.Img variant="top" src={imageUrl} className='player-img' />
+      <Card.Body className='player-info'>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
+          Team: {team}<br />
+          Nationality: {nationality}<br />
+          Jersey Number: {jerseyNumber}<br />
+          Age: {age}
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
 
-const players = [
-    {
-      name: "Lionel Messi",
-      team: "Inter Miami",
-      nationality: "Argentinian",
-      jerseyNumber: 30,
-      age: 34,
-      ImageUrl: Messi,
-    },
-    {
-      name: "Cristiano Ronaldo",
-      team: "Al-Nassr Fc",
-      nationality: "Portuguese",
-      jerseyNumber: 7,
-      age: 36,
-      ImageUrl: Ronaldo,
-    },
-    {
-        name: "Neymar da Silva",
-        team: "Al-Nassr FC",
-        nationality: "Brazil",
-        jerseyNumber: 10,
-        age: 31,
-        ImageUrl: Neymar,
-      },
-    {
-        name: "Victor James Osimhen",
-        team: "Napoli",
-        nationality: "Nigerian",
-        jerseyNumber: 9,
-        age: 24,
-        ImageUrl: Victor,
-      },
-      {
-        name: "Kylian Mbappe",
-        team: "PSG",
-        nationality: "Cameroon",
-        jerseyNumber: 7,
-        age: 24,
-        ImageUrl: Mmbape,
-      },
-  ];
-  
-  export default players;
-  
+Player.defaultProps = {
+  name: "Unknown",
+  team: "Unknown",
+  nationality: "Unknown",
+  jerseyNumber: "Unknown",
+  age: "Unknown",
+  imageUrl: "https://example.com/placeholder.jpg"
+};
+
+export default Player;

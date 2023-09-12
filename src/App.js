@@ -1,17 +1,17 @@
-// src/App.js
-
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
 import PlayersList from './PlayersList';
+import "./App.css"
 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Football Players</h1>
+    <div className='player'>
+      <h1 >
+ Player List</h1>
       <PlayersList />
+      
     </div>
   );
-}
+};
 
 export default App;
